@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UDPReceiver.cs">
     <Files>
-      <File FileName="Assets\WaterForce.cs" Line="13" Column="21" />
-      <File FileName="Assets\Scripts\UDPReceiver.cs" Line="122" Column="78" />
+      <File FileName="Assets\Scripts\UDPReceiver.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
