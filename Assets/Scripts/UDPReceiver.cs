@@ -15,10 +15,10 @@ using System.Threading;
 public class UDPReceiver: MonoBehaviour
 {
 	//Forward/backward speed
-	public float speed = 400f;
+	public float speed = 300f;
 	
 	//Rotation speed
-	public float rotationSpeed = 200f;
+	public float rotationSpeed = 150f;
 	
 	// The port number to listen to for android
 	public int port_android = 15935;
@@ -49,8 +49,14 @@ public class UDPReceiver: MonoBehaviour
 
 	// Constant defining the maximal time of a game
 	private const float MAX_TIME = 60f;
-	
+
+	// 
 	private Vector3 velocity;
+	private Vector3 frictionForce;
+	private Vector3 angularFrictionForce;
+
+	private float waterFriction = 0.1f;
+	private float waterAngularFriction = 0.2f;
 	
 	// start from shell
 	private static void Main() {
@@ -82,12 +88,23 @@ public class UDPReceiver: MonoBehaviour
 		}
 		velocity = rigidbody.velocity;
 		
+		// Water dynamic repulsion force
+		
 		Vector3 referenceRight= Vector3.Cross(Vector3.up, velocity);
 		Vector3 newDirection = -transform.forward;
 		float angle = Vector3.Angle(newDirection, velocity);
 		float sign = Mathf.Sign(Vector3.Dot(newDirection, referenceRight));
 		float finalAngle = sign * angle;
-		rigidbody.velocity = Quaternion.Euler (0, finalAngle, 0) * velocity;
+
+		velocity = Quaternion.Euler (0, finalAngle, 0) * velocity;
+
+		frictionForce = waterFriction * Time.deltaTime * velocity;
+
+		rigidbody.velocity = velocity - frictionForce;
+
+		//angular resistance
+		angularFrictionForce = waterAngularFriction * Time.deltaTime * rigidbody.angularVelocity;
+		rigidbody.angularVelocity = rigidbody.angularVelocity - angularFrictionForce;
 	}
 	
 	// FixedUpdate is called before physics calculations
