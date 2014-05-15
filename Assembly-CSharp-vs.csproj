@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>E:/Programs/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>E:/Programs/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -50,9 +50,9 @@
      <Compile Include="Assets\Scripts\CameraAPI.cs" />
      <Compile Include="Assets\Scripts\OffCenterPerspective.cs" />
      <Compile Include="Assets\Scripts\Rotation.cs" />
+     <Compile Include="Assets\Scripts\SimpleWaterForce.cs" />
      <Compile Include="Assets\Scripts\UDPReceiver.cs" />
-     <Compile Include="Assets\SimpleWaterForce.cs" />
-     <Compile Include="Assets\WaterForce.cs" />
+     <Compile Include="Assets\Scripts\WaterForce.cs" />
      <Compile Include="Assets\boats\Standard Assets\Image Effects (Pro Only)\BlurEffect.cs" />
      <Compile Include="Assets\boats\Standard Assets\Image Effects (Pro Only)\ColorCorrectionEffect.cs" />
      <Compile Include="Assets\boats\Standard Assets\Image Effects (Pro Only)\ContrastStretchEffect.cs" />

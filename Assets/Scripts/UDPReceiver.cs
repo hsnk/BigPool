@@ -18,7 +18,7 @@ public class UDPReceiver: MonoBehaviour
 	public float speed = 300f;
 	
 	//Rotation speed
-	public float rotationSpeed = 150f;
+	public float rotationSpeed = 50f;
 	
 	// The port number to listen to for android
 	public int port_android = 15935;
@@ -119,7 +119,7 @@ public class UDPReceiver: MonoBehaviour
 
 		rigidbody.AddForce(moveDirection * Time.deltaTime, ForceMode.Acceleration);
 
-		float horizontal = Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
+		float horizontal = Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime * 5f;
 		//transform.Rotate(Vector3.up * horizontal);
 		rigidbody.AddTorque(Vector3.up * horizontal);
 
@@ -135,8 +135,8 @@ public class UDPReceiver: MonoBehaviour
 			rigidbody.AddForce(transform.forward * scaledSpeed, ForceMode.Acceleration);
 
 			float rotationScale = (Math.Min(Math.Max(lastValues[1], -8.0f), 8.0f)/8.0f) * rotationSpeed * Time.deltaTime;
-			//transform.Rotate(Vector3.up * rotationScale);
-			rigidbody.AddTorque(Vector3.up * rotationScale);
+			transform.Rotate(Vector3.up * rotationScale);
+			//rigidbody.AddTorque(Vector3.up * rotationScale);
 		}
 	}
 
