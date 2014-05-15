@@ -131,10 +131,10 @@ public class UDPReceiver: MonoBehaviour
 		// App controller
 		if (lastValues != null && lastValues.Length == 3)
 		{
-			float scaledSpeed = -(lastValues[2]/10.0f) * speed * Time.deltaTime;
+			float scaledSpeed = -(Math.Min(Math.Max(lastValues[2], -6.0f), 6.0f)/6.0f) * speed * Time.deltaTime;
 			rigidbody.AddForce(transform.forward * scaledSpeed, ForceMode.Acceleration);
 
-			float rotationScale = (lastValues[1]/10.0f) * rotationSpeed * Time.deltaTime;
+			float rotationScale = (Math.Min(Math.Max(lastValues[1], -6.0f), 6.0f)/6.0f) * rotationSpeed * Time.deltaTime;
 			//transform.Rotate(Vector3.up * rotationScale);
 			rigidbody.AddTorque(Vector3.up * rotationScale);
 		}
