@@ -21,7 +21,7 @@ public class WaterForce : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		height = 1f;
-		damp = 0.3f;
+		damp = 0.1f;
 		buoyancyCenter = new Vector3 (0, 1, 0);
 	}
 	
