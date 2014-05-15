@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Rotation.cs" />
      <Compile Include="Assets\Scripts\UDPReceiver.cs" />
+     <Compile Include="Assets\SimpleWaterForce.cs" />
      <Compile Include="Assets\WaterForce.cs" />
      <Compile Include="Assets\boats\Standard Assets\Image Effects (Pro Only)\BlurEffect.cs" />
      <Compile Include="Assets\boats\Standard Assets\Image Effects (Pro Only)\ColorCorrectionEffect.cs" />
