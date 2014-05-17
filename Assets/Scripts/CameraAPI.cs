@@ -42,7 +42,7 @@ public class CameraAPI : MonoBehaviour
 
 	public void FixedUpdate()
 	{
-		transform.localPosition = new Vector3(xPos*10, (yPos*10)+2, (-zPos*10));
+		transform.localPosition = new Vector3(xPos*10, (yPos*10), (-zPos*10)+7);
 	}
 
 	// Called when application quits
